@@ -1,2 +1,2 @@
 # jf.openresty
-deploy openresty
+This role just deploys openresty in a generic manner.

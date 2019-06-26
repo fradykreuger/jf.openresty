@@ -1,0 +1,15 @@
+---
+
+- name: jf.openresty | setup-debian | add apt-key
+  apt_key:
+    url: https://openresty.org/package/pubkey.gpg
+    state: present
+
+- name: jf.openresty | setup-debian | add repo
+  apt_repository:
+    repo: deb http://openresty.org/package/ubuntu {{ ansible_lsb.codename }} main
+    state: present
+
+- name: jf.openresty | setup-debian | install packages
+  apt: pkg=openresty state=present update_cache=yes
+
